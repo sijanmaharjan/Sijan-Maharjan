@@ -111,11 +111,6 @@
                                         <i class="material-icons">star</i> Skills
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#library" role="tab" data-toggle="tab">
-                                        <i class="material-icons">apps</i> Library
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -227,9 +222,6 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="tab-pane text-center gallery" id="library">
-                        <!-- auto filled -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -250,50 +242,6 @@
     </footer>
     <!--   Core JS Files   -->
     <script src="assets/js/core/jquery.min.js"></script>
-    <script type="text/javascript">
-        $.get(
-            "https://api.github.com/user/repos", {
-                access_token : '6dc8cbf63ac550259d9558b9ef55577f62de7afe',
-                type: 'public',
-                sort: 'updated'
-            },
-            function(repos, status){
-                if(status == "success"){
-                    addToLibrary(repos);
-                }else{
-                    $("#library").html("Error cannot access! Refresh again later.");
-                }
-        });
-        function addToLibrary(repos){
-            var items = "<ul style='list-style-type:none; text-align: left'>";
-            var len = repos.length;
-            if(len > 0){
-                var repo;
-                for(var i=0;i<len;i++){
-                    repo = repos[i];
-                    if(repo.name){
-                        if(repo.name.toString() != "CJSoftwares.Assets" && repo.name.toString() != "laughing-chainsaw" && repo.name.toString() != "sijanmaharjan.github.io"){
-                            items += "<li class='col-12 border-bottom'>"+
-                                     "    <div class='d-inline-block'>"+
-                                     "     <h3>"+
-                                     "       <a href='"+repo.html_url+"' target='_blank'>"+
-                                     "       "+repo.name+"</a>"+
-                                     "     </h3>"+
-                                     "   </div>"+
-                                     "   <div class='text-gray'>"+
-                                     "       <span>"+
-                                              repo.language+" . "+
-                                     "      </span>"+
-                                     "       Last Updated "+repo.updated_at+
-                                     "   </div>"+
-                                     "</li>";
-                        }
-                    }
-                }
-            }
-            $("#library").html(items+"</ul>");
-        }
-    </script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/bootstrap-material-design.js"></script>
