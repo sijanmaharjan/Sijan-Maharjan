@@ -1,4 +1,4 @@
 # Sijan Maharjan
-## "I am a passionate Java Enthusiast"
+## I am a passionate Java Enthusiast
 
-[Check More](https://sijanmaharjan.github.io)
+[Check More About Me](https://sijanmaharjan.github.io)
